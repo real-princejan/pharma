@@ -31,7 +31,7 @@ export const registerController = async (req, res) => {
         if(existingUser){
             return res.status(200).send({
                 success:true,
-                message:'Already registered email'
+                message:'Already registered email please login',
             })
         }
 
@@ -45,13 +45,13 @@ export const registerController = async (req, res) => {
             phone, 
             address, 
             password:hashedPassword,
-        }).save()
+        }).save();
 
-        res.status(202).send({
+        res.status(201).send({
             success:true,
             message:'User created successfully',
             user
-        })
+        });
 
 
     }catch (error){
@@ -60,7 +60,7 @@ export const registerController = async (req, res) => {
             success:false,
             message:'Error in Registration',
             error
-        })
+        });
     }
 };
 
@@ -112,6 +112,21 @@ export const loginController = async(req, res) => {
             success:false,
             message:'Error in Login',
             error
-        })
+        });
     }
+};
+
+
+// FORGOT PASSWORD
+
+// TEST CONTROLLER
+export const testController = (req, res) => {
+    try {
+     res.send ('Protected Routes');
+
+    } catch (error) {
+        console.log(error);
+        res.send({error});
+    }
+   
 };
