@@ -1,28 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 
 import "remixicon/fonts/remixicon.css";
 import "aos/dist/aos.css";
 
 // Router
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 
-     
+// imports
+import { AuthProvider } from "./context/auth";
 
-//  
-// import $ from 'jquery';
-// import Popper from 'popper.js';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <AuthProvider>
     <BrowserRouter>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
+      <App />
     </BrowserRouter>
-
-
+  </AuthProvider>
 );

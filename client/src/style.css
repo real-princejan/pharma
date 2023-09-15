@@ -863,6 +863,11 @@ a {
   position: relative;
   right: -10px;
 }
+
+.aright{
+  position: relative;
+  right: -100px;
+}
   
 .search-wrap {
   position: absolute;
