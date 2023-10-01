@@ -1148,3 +1148,27 @@ a {
 
 .custom-table td {
   color: #000; }
+
+
+  /* ===================== */
+  .product-link{
+    text-decoration: none !important;
+    color: #212529 !important;
+    
+  }
+
+  .ri-add-circle-line{
+    height: 80px;
+    line-height: 80px;  
+    width: 80px;  
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }
+  .ri-add-circle-line:hover{
+    opacity: 85%;
+  }

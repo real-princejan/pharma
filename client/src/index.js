@@ -5,6 +5,7 @@ import App from "./App";
 
 import "remixicon/fonts/remixicon.css";
 import "aos/dist/aos.css";
+import "antd/dist/reset.css";
 
 // Router
 import { BrowserRouter } from "react-router-dom";
