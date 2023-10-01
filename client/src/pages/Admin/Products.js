@@ -31,12 +31,10 @@ const Products = () => {
           <div className="col-md-3">
             <AdminMenu />
           </div>
-
           <div className="col-md-9">
             <div className="d-flex justify-content-between align-items-center">
               <h1>All Products list</h1>
               <div className="col-md-3">
-                {/* Create product button */}
                 <i className="ri-add-circle-line"></i>
               </div>
             </div>
@@ -48,7 +46,13 @@ const Products = () => {
                   className="product-link"
                 >
                   <div className="card m-2" style={{ width: "18rem" }}>
-                    <img className="card-img-top" src={p.photo} alt={p.name} />
+                    <img
+                      className="card-img-top"
+                      height={"300px"}
+                      width={"250px"}
+                      src={`/api/v1/product/product-photo/${p._id}`}
+                      alt={p.name}
+                    />
                     <div className="card-body">
                       <h5 className="card-title">{p.name}</h5>
                       <p className="card-text">{p.description}</p>

@@ -63,6 +63,9 @@ a {
   .btn.btn-primary:hover {
     background: transparent;
     color: #51eaea; }
+    .btn.btn-danger:hover {
+      background: transparent;
+      color: #DC4C64; }
   .btn.btn-black {
     background: #000;
     color: #fff; }
