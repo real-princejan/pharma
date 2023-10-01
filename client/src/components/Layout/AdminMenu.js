@@ -14,12 +14,6 @@ const AdminMenu = () => {
             Create Category
           </Link>
           <Link
-            to="/dashboard/admin/create-product"
-            className="list-group-item list-group-item-action"
-          >
-            Create Product
-          </Link>
-          <Link
             to="/dashboard/admin/products"
             className="list-group-item list-group-item-action"
           >

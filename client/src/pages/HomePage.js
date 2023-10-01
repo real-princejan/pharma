@@ -10,9 +10,13 @@ const HomePage = () => {
   const [auth, setAuth] = useAuth();
 
   return (
-    <Layout title={"Best pharmaceutical online store"}>
-      <h1>Homepage</h1>
-      <pre>{JSON.stringify(auth, null, 4)}</pre>
+    <Layout title={"All Products - Pharmaceutical Store"}>
+      <div className="row">
+        <div className="col-md-3"></div>
+        <div className="col-md-9">
+          <h1 className="text-center">All Products</h1>
+        </div>
+      </div>
     </Layout>
   );
 };
