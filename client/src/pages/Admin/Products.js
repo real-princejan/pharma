@@ -85,8 +85,8 @@ const Products = () => {
                   <div className="card m-2" style={{ width: "18rem" }}>
                     <img
                       className="card-img-top"
-                      height={"300px"}
-                      width={"250px"}
+                      height={"400"}
+                      width={"300px"}
                       src={`/api/v1/product/product-photo/${p._id}`}
                       alt={p.name}
                     />

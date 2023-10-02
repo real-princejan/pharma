@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
+import SearchInput from "../Form/SearchInput";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -38,28 +39,9 @@ const Header = () => {
               >
                 <ul className="site-menu js-clone-nav d-none d-lg-block">
                   <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/store">Our Store</Link>
                   </li>
-                  <li>
-                    <Link to="/store">Store</Link>
-                  </li>
-                  <li className="has-children">
-                    <Link to="/">
-                      {" "}
-                      Items <i className="ri-arrow-drop-down-fill"></i>
-                    </Link>
-                    <ul className="dropdown">
-                      <li>
-                        <Link to="/supplements">Supplements</Link>
-                      </li>
-                      <li className="has-children">
-                        <Link to="/vitamins"> Vitamins</Link>
-                      </li>
-                      <li>
-                        <Link to="/nutrition">Diet &amp; Nutrition</Link>
-                      </li>
-                    </ul>
-                  </li>
+
                   <li>
                     <Link to="/about">About</Link>
                   </li>
@@ -74,7 +56,7 @@ const Header = () => {
             {!auth.user ? (
               <>
                 <Link to="/login" className="icons-btn d-inline-block log">
-                  <Button variant="outline-info text-capitalize">
+                  <Button variant="outline-success text-capitalize">
                     <i className="ri-login-box-line p-1"></i>
                     Login
                   </Button>
@@ -82,28 +64,19 @@ const Header = () => {
               </>
             ) : (
               <>
-                <div className="icons d-flex aright">
-                  <Link
-                    to="/"
-                    className="icons-btn d-inline-block js-search-open"
-                  >
-                    <span className="ri-search-line"></span>
-                  </Link>
-
+                <SearchInput />
+                <div className="icons d-flex align-items-center">
                   <Link to="/cart" className="icons-btn d-inline-block bag">
                     <span className="ri-shopping-bag-line"></span>
                     <span className="number">0</span>
                   </Link>
                 </div>
 
-                <nav
-                  className="site-navigation text-right text-md-center"
-                  role="navigation"
-                >
+                <nav className="site-navigation text-right text-md-center">
                   <ul className="site-menu js-clone-nav d-none d-lg-block">
                     <li className="has-children">
                       <Link to="/">
-                        <i class="ri-user-3-line"></i>
+                        <i className="ri-user-3-line"></i>
                         {auth?.user?.name}
                         <i className="ri-arrow-drop-down-fill"></i>
                       </Link>
@@ -116,8 +89,8 @@ const Header = () => {
                             }`}
                             className="d-inline-block"
                           >
-                            <Button variant="outline-info text-capitalize">
-                              <i class="ri-dashboard-line p-1"></i>
+                            <Button variant="outline-success text-capitalize my-button">
+                              <i className="ri-dashboard-line p-1"></i>
                               Dashboard
                             </Button>
                           </Link>
@@ -129,7 +102,7 @@ const Header = () => {
                             to="/login"
                             className="d-inline-block"
                           >
-                            <Button variant="outline-info text-capitalize">
+                            <Button variant="outline-success text-capitalize my-button">
                               <i className="ri-login-box-line p-1"></i>
                               Logout
                             </Button>

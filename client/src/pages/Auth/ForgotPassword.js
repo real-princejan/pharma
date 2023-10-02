@@ -112,7 +112,7 @@ const ForgotPassword = () => {
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
                             type="submit"
-                            className="btn btn-outline-info btn-lg rounded"
+                            className="btn btn-outline-success btn-lg rounded"
                           >
                             Reset
                           </button>

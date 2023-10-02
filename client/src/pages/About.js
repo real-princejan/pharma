@@ -4,17 +4,21 @@ import Layout from "../components/Layout/Layout";
 // import images
 import jog from "../images/jogging.svg";
 import start from "../images/start.svg";
+import pharmaIMG from "../images/pharma.jpg";
 
 const About = () => {
   return (
     <Layout title={"About us - Pharma"}>
-      <div className="site-blocks-cover inner-page">
+      <div
+        className="site-blocks-cover inner-page"
+        style={{ backgroundImage: `url(${pharmaIMG})` }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-7 mx-auto align-self-center">
               <div className=" text-center">
-                <h1>About Us</h1>
-                <p>
+                <h1 className="shadows">About Us</h1>
+                <p className="sub-title text-dark">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
                   obcaecati natus iure voluptatum eveniet harum recusandae
                   ducimus saepe.

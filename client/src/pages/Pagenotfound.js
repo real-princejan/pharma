@@ -18,7 +18,7 @@ const PageNotFound = () => {
               <p>
                 <Link
                   to={"/"}
-                  className="btn btn-md height-auto px-4 py-3 mt-5 btn-outline-info"
+                  className="btn btn-md height-auto px-4 py-3 mt-5 btn-outline-success"
                 >
                   Back to home
                 </Link>

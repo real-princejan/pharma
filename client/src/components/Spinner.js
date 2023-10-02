@@ -29,8 +29,8 @@ const Spinner = ({ path = "login" }) => {
         <MutatingDots
           height="100"
           width="100"
-          color="#51eaea"
-          secondaryColor="#51eaea"
+          color="#4CAF50"
+          secondaryColor="#4CAF50"
           radius="12.5"
           ariaLabel="mutating-dots-loading"
           wrapperStyle={{}}

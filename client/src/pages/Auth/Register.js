@@ -162,14 +162,16 @@ const Register = () => {
                         <div className="form-check d-flex justify-content-center mb-5">
                           <label className="form-check-label text-secondary">
                             Already have an account?{" "}
-                            <Link to="/login">Login Here</Link>
+                            <Link className="text-success no-dec" to="/login">
+                              Login Here
+                            </Link>
                           </label>
                         </div>
 
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
                             type="submit"
-                            className="btn btn-outline-info btn-lg rounded"
+                            className="btn btn-outline-success btn-lg rounded"
                           >
                             Register
                           </button>

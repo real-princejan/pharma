@@ -83,7 +83,7 @@ const Contact = () => {
                     <div className="col-lg-12 py-4">
                       <input
                         type="submit"
-                        className="btn btn-primary btn-lg btn-block"
+                        className="btn btn-success btn-lg btn-block"
                         value="Send Message"
                       />
                     </div>

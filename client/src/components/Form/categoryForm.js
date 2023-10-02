@@ -16,7 +16,7 @@ const CategoryForm = ({ handleSubmit, value, setValue }) => {
         </div>
 
         {/* Submit button */}
-        <button type="submit" className="btn btn-outline-info py-2 px-3">
+        <button type="submit" className="btn btn-outline-success py-2 px-3">
           Enter
         </button>
       </form>

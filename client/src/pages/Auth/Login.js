@@ -105,21 +105,31 @@ const Login = () => {
                         <div className="form-check d-flex justify-content-center">
                           <label className="form-check-label text-secondary">
                             Don't have an account?{" "}
-                            <Link to="/register">Register Here</Link>
+                            <Link
+                              className="text-success no-dec"
+                              to="/register"
+                            >
+                              Register Here
+                            </Link>
                           </label>
                         </div>
 
                         <div className="form-check d-flex justify-content-center mb-4">
                           <label className="form-check-label text-secondary">
                             Forgot Password?{" "}
-                            <Link to="/forgot-password">Click here.</Link>
+                            <Link
+                              className="text-success no-dec"
+                              to="/forgot-password"
+                            >
+                              Click here.
+                            </Link>
                           </label>
                         </div>
 
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
                             type="submit"
-                            className="btn btn-outline-info btn-lg rounded"
+                            className="btn btn-outline-success btn-lg rounded"
                           >
                             Login
                           </button>
