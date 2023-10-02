@@ -63,6 +63,14 @@ a {
   .btn.btn-success:hover {
     background: transparent;
     color: #343a40; }
+    .btn.btn-primary {
+      background-color: #83f7aa;
+      color: #000;
+    }
+    .btn.btn-primary:hover {
+      background-color: transparent;
+      color: #000;
+    }
     .btn.btn-danger:hover {
       background: transparent;
       color: #DC4C64; }
@@ -1090,6 +1098,7 @@ text-decoration: none;}
 
 .banner-1 {
   background-size: cover;
+  background-color: #fff;
   background-position: center;
   background-repeat: no-repeat;
   padding: 20px;
@@ -1134,7 +1143,7 @@ text-decoration: none;}
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(81, 234, 234, 0.9);
+    background: #4CAF50;
     z-index: 1; }
   .bg-image > .container {
     position: relative;
@@ -1224,3 +1233,9 @@ text-decoration: none;}
     cursor: pointer; /* Change the cursor on hover to indicate interactivity */
   }
   
+  .remove{
+    cursor: pointer;
+  }
+  .remove:hover{
+    opacity: 80%;
+  }

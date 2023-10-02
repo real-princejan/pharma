@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import SearchInput from "../Form/SearchInput";
+import { useCart } from "../../context/cart";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
+  const [cart] = useCart();
   const handleLogout = () => {
     setAuth({
       ...auth,
@@ -68,7 +70,7 @@ const Header = () => {
                 <div className="icons d-flex align-items-center">
                   <Link to="/cart" className="icons-btn d-inline-block bag">
                     <span className="ri-shopping-bag-line"></span>
-                    <span className="number">0</span>
+                    <span className="number">{cart?.length}</span>
                   </Link>
                 </div>
 

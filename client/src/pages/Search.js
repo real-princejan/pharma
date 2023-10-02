@@ -1,8 +1,10 @@
 import React from "react";
 import Layout from "./../components/Layout/Layout";
 import { useSearch } from "../context/Search";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const navigate = useNavigate();
   const [values, setValues] = useSearch();
   return (
     <Layout title={"Search results"}>
@@ -20,6 +22,8 @@ const Search = () => {
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
+                  height={"400px"}
+                  width={"300px"}
                   alt={p.name}
                 />
                 <div className="card-body d-flex flex-column justify-content-start">
@@ -31,7 +35,7 @@ const Search = () => {
                     ₱ {p.price}
                   </p>
                   <a
-                    onClick={() => navigate}
+                    onClick={() => navigate(`/product/${p.slug}`)}
                     className="buy-now btn btn-sm height-aut o px-4 py-3 btn-warning mb-2"
                   >
                     More Details

@@ -7,8 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 // auth
 
 import axios from "axios";
-import { Checkbox, Radio } from "antd";
-import { Prices } from "../components/Prices";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -72,6 +70,7 @@ const HomePage = () => {
     if (page === 1) return;
     loadMore();
   }, [page]);
+
   // Load more
   const loadMore = async () => {
     try {
@@ -83,17 +82,6 @@ const HomePage = () => {
       console.log(error);
       setLoading(false);
     }
-  };
-
-  // Filter by category
-  const handleFilter = (value, id) => {
-    let all = [...checked];
-    if (value) {
-      all.push(id);
-    } else {
-      all = all.filter((c) => c !== id);
-    }
-    setChecked(all);
   };
 
   const productFilter = async () => {
@@ -190,90 +178,60 @@ const HomePage = () => {
         </div>
       </div>
       {/* Section 2 */}
-      <div className="row mt-3">
-        <div className="col-md-3">
-          {/* Filter by category */}
-          <h5 className="text-center">Filter by category</h5>
-          <div className="d-flex flex-column mx-5">
-            {categories?.map((c) => (
-              <Checkbox
-                className="m-1"
-                key={c._id}
-                onChange={(e) => handleFilter(e.target.checked, c._id)}
-              >
-                {c.name}
-              </Checkbox>
-            ))}
-          </div>
-          {/* Filter  by price */}
-          <h5 className="text-center mt-4">Filter by price</h5>
-          <div className="d-flex flex-column mx-5 ">
-            <Radio.Group onChange={(e) => setRadio(e.target.value)}>
-              {Prices?.map((p) => (
-                <div key={p._id}>
-                  <Radio className="m-1" value={p.array}>
-                    {p.name}
-                  </Radio>
-                </div>
-              ))}
-            </Radio.Group>
+      <div className="site-section">
+        <div className="container">
+          <div className="row">
+            <div className="title-section text-center col-12">
+              <h2 className="text-uppercase">Popular Products</h2>
+            </div>
           </div>
 
-          <div className="d-flex flex-column mx-5 p-4">
-            <button
-              className="btn btn-danger"
-              onClick={() => window.location.reload()}
-            >
-              RESET FILTER
-            </button>
-          </div>
-        </div>
-        <div className="col-md-9">
-          <h1 className="text-dark m-2">All Products</h1>
-          <div className="d-flex flex-wrap ">
+          <div className="row">
             {products?.map((p) => (
-              <div className="card m-2" style={{ width: "18rem" }}>
-                <img
-                  className="card-img-top"
-                  height={"400px"}
-                  width={"300px"}
-                  src={`/api/v1/product/product-photo/${p._id}`}
-                  alt={p.name}
-                />
+              <div
+                className="col-sm-6 col-lg-4 text-center item mb-4"
+                key={p._id}
+              >
+                <div className="card m-2" style={{ width: "18rem" }}>
+                  <span className="tag">Sale</span>
+                  <img
+                    className="card-img-top"
+                    height={"400px"}
+                    width={"300px"}
+                    src={`/api/v1/product/product-photo/${p._id}`}
+                    alt={p.name}
+                  />
 
-                <div className="card-body d-flex flex-column justify-content-start">
-                  <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">
-                    {p.description.substring(0, 30)}...
-                  </p>
-                  <p className="card-text text-secondary text-center">
-                    ₱ {p.price}
-                  </p>
-                  <a
-                    onClick={() => navigate(`/product/${p.slug}`)}
-                    className="buy-now btn btn-sm height-auto px-4 py-3 btn-warning mb-2"
-                  >
-                    More Details
-                  </a>
-                  <a className="buy-now btn btn-sm height-auto px-4 py-3 btn-success mb-2">
-                    Add To Cart
-                  </a>
+                  <div className="card-body d-flex flex-column justify-content-start">
+                    <h3 className="text-dark">
+                      <p>{p.name}</p>
+                    </h3>
+                    <p className="price text-center">₱ {p.price}</p>
+                    <p className="card-text">
+                      {p.description.substring(0, 30)}...
+                    </p>
+
+                    <a
+                      onClick={() => navigate(`/product/${p.slug}`)}
+                      className="buy-now btn btn-sm height-auto px-4 py-3 btn-warning mb-2"
+                    >
+                      More Details
+                    </a>
+                    <a className="buy-now btn btn-sm height-auto px-4 py-3 btn-success mb-2">
+                      Add To Cart
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="m-2 p-3">
-            {products && products.length < total && (
-              <button
-                className="btn btn-warning px-4 py-2"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPage(page + 1);
-                }}
-              >
-                {loading ? "Loading ..." : "Load more"}
-              </button>
-            )}
+
+          <div className="row mt-5">
+            <div className="col-12 text-center">
+              <Link to="/store" className="btn btn-primary px-4 py-3">
+                View All Products
+              </Link>
+            </div>
           </div>
         </div>
       </div>
